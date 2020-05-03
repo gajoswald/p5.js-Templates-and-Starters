@@ -60,7 +60,7 @@ function drawSmallestCircle() {
   let c = smallestCircle();
   stroke(0,0,255);
   circle(c.x,c.y,c.r);
-  text(`smallest radius: ${c.r}, perimeter: ${2*PI*c.r}`, textCoordinates.x, textCoordinates.y.smallest ); console.log( allPointsInsideCircle(c) ); 
+  text(`smallest radius: ${c.r}, perimeter: ${2*PI*c.r}`, textCoordinates.x, textCoordinates.y.smallest );
 }
 
 function drawHull() {

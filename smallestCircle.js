@@ -6,10 +6,12 @@ function smallestCircle() {
 }
 
 function scHelper(a, c, hull) {
-  // find minimum angle to AC.  
+  // find minimum angle to AC. 
+  // loop over all points and calculate the "subtended" angle.  
   let b;
   let minAngle = Infinity;
   for( const v of hull ) {
+    // exclude a and c. 
     if( v.x !== a.x && v.y !== a.x && v.x !== c.x && v.y !== c.y ) {
       const theta = abs( angle(a,v,c) );
       if( theta < minAngle ) {

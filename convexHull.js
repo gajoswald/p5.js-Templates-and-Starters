@@ -1,5 +1,4 @@
-// https://www.nayuki.io/res/convex-hull-algorithm/convex-hull.js
-
+// https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain#JavaScript
 function convexHull() {
   let pts = points.slice().sort( (a,b) => a.x == b.x ? a.y - b.y : a.x - b.x );
   // no sanity check
