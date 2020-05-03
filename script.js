@@ -1,8 +1,14 @@
 function setup() {
-  createCanvas(windowWidth-50,windowHeight-50);
+  createCanvas(windowWidth-20,windowHeight-20);
   background(100);
+  setupKeyBindings();
+  generateNewPoints();
+  rectMode(CORNERS);
+  ellipseMode(RADIUS);
+  noLoop();
+  noFill();
 }
 
 function draw() {
-  circle(mouseX,mouseY,20);
+
 }
