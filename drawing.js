@@ -57,14 +57,25 @@ function drawBoundingBoxCircle() {
 }
 
 function drawSmallestCircle() {
-  let c = smallestCircle();
+  let c = smallestCircle(points);
   stroke(0,0,255);
   circle(c.x,c.y,c.r);
   text(`smallest radius: ${c.r}, perimeter: ${2*PI*c.r}`, textCoordinates.x, textCoordinates.y.smallest );
 }
 
+function drawNaiveSmallestCircle() {
+  let circles = naiveSmallestCircle(points);
+  stroke(255,0,0,128);
+  circle(circles.max2Point.x, circles.max2Point.y, circles.max2Point.r);
+
+  stroke(0, 255, 0);
+  const r = circles.c.r;
+  text(`smallest radius: ${r}, perimeter: ${2*PI*r}`, textCoordinates.x, textCoordinates.y.naive );
+  circle(circles.c.x, circles.c.y, circles.c.r);  
+}
+
 function drawHull() {
-  let hull = convexHull();
+  let hull = convexHull(points);
   let perimeter = 0;
   let previousP = hull[0];
   stroke(200);

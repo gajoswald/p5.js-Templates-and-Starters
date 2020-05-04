@@ -6,9 +6,10 @@ function setupKeyBindings() {
   keyMap.set('m', () => drawMedianCircle() );
   keyMap.set('b', () => drawBoundingBox() );
   keyMap.set('c', () => drawBoundingBoxCircle() );
-  keyMap.set('n', () =>  naiveSmallestCircle() );
+  keyMap.set('n', () => drawNaiveSmallestCircle() );
   keyMap.set('s', () => drawSmallestCircle() );
   keyMap.set('h', () => drawHull() );
+  keyMap.set('t', () => timeNaiveVsOptimized() );
 }
 
 function keyPressed() {

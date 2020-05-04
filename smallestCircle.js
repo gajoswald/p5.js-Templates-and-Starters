@@ -1,5 +1,5 @@
-function smallestCircle() {
-  let hull = convexHull();
+function smallestCircle( points ) {
+  let hull = convexHull( points );
   let a = hull[0];
   let c = hull[1];
   return scHelper( a, c, hull );
@@ -38,8 +38,7 @@ function scHelper(a, c, hull) {
 }
 
 
-function naiveSmallestCircle() {
-  subCircles = [];
+function naiveSmallestCircle(points) {
   let theCircle = {x:undefined, y:undefined, r:Infinity};
   let max2PointCircle = {x:undefined, y:undefined, r:-Infinity};
 
@@ -66,12 +65,6 @@ function naiveSmallestCircle() {
     }
   }
 
-  stroke(255,0,0,128);
-  circle(max2PointCircle.x, max2PointCircle.y, max2PointCircle.r);
-
-  stroke(0, 255, 0);
-  const r = theCircle.r;
-  text(`smallest radius: ${r}, perimeter: ${2*PI*r}`, textCoordinates.x, textCoordinates.y.naive );
-  circle(theCircle.x, theCircle.y, theCircle.r);
+  return {max2Point: max2PointCircle, c: theCircle};
 }
 
